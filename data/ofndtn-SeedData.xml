@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <Enumeration enumId="VT_NAV_APPHDR_LOC" enumTypeId="VT_RES_TYPE" sequenceId="30" description="Location of Application header."/>
+
+    <VisualTheme visualThemeId="ofndtn" visualThemeSetId="BACKOFFICE" description="O Foundation Basic Theme - Floating Layout, Sight-Impaired Accessible, Bidirectional"/>
+    
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_NAME" resourceValue="O Bootstrap Theme" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_SHORTCUT_ICON" resourceValue="/ofndtn/images/img/ofbiz.ico" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_IMAGE_URL" resourceValue="/ofndtn/images/img/ofbiz-logo.gif" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_SCREENSHOT" resourceValue="/ofndtn/images/screenshot.jpg" sequenceId="01"/>
+    
+    <!-- css related -->
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/ofndtn/images/css/foundation.min.css" sequenceId="01"/>
+    
+    <!-- ftl references -->
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_BS_TMPLT_LOC" resourceValue="component://ofndtn/includes/templates/htmlTemplate.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_TMPLT_LOC" resourceValue="component://ofndtn/includes/header.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_MSG_TMPLT_LOC" resourceValue="component://common/webcommon/includes/messages.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_FTR_TMPLT_LOC" resourceValue="component://ofndtn/includes/footer.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_NAV_TMPLT_LOC" resourceValue="component://ofndtn/includes/emptyAppBar.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_NAV_APPHDR_LOC" resourceValue="component://ofndtn/includes/appbar.ftl" sequenceId="01"/>
+    
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_BS_MACRO_LIB" resourceValue="component://ofndtn/includes/templates/htmlTemplate.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_SCRN_MACRO_LIB" resourceValue="component://ofndtn/includes/templates/htmlScreenMacroLibrary.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_FORM_MACRO_LIB" resourceValue="component://ofndtn/includes/templates/htmlFormMacroLibrary.ftl" sequenceId="01"/>
+    <!--  <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_TREE_MACRO_LIB" resourceValue="component://ofndtn/includes/templates/htmlTreeMacroLibrary.ftl" sequenceId="01"/> -->
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_MENU_MACRO_LIB" resourceValue="component://ofndtn/includes/templates/htmlMenuMacroLibrary.ftl" sequenceId="01"/>
+    
+    <!-- js related -->
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/jquery-1.11.0.min.js" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/jquery-migrate-1.2.1.js" sequenceId="02"/>
+    
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/ui/js/jquery-ui-1.10.3.min.js" sequenceId="03"/>
+    
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/asmselect/jquery.asmselect-1.0.4a-beta.js" sequenceId="05"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/datetimepicker/jquery-ui-timepicker-addon.min-1.4.3.js" sequenceId="07"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/fjTimer/jquerytimer-min.js" sequenceId="09"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/jquery.maskedinput-1.3.1.min.js" sequenceId="10"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/jeditable/jquery.jeditable.js" sequenceId="11"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/validate/jquery.validate.min.js" sequenceId="12"/>
+    
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/OpenLayers-2.13.1.js" sequenceId="13"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/selectall.js" sequenceId="15"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/fieldlookup.js" sequenceId="16"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/date/date.format-1.2.3-min.js" sequenceId="17"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/date/date.timezone-min.js" sequenceId="18"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/miscAjaxFunctions.js" sequenceId="19"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/selectMultipleRelatedValues.js" sequenceId="20"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/util.js" sequenceId="21"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/date/FromThruDateCheck.js" sequenceId="22"/>v
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/ui/js/jquery.cookie-1.4.0.js" sequenceId="23"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/jsTree/jquery.jstree.js" sequenceId="24"/>
+    
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/orrtizbltheme/js/orrtiz.js" sequenceId="100"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/orrtizbltheme/js/dropdown.js" sequenceId="101"/>
+    
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/ofndtn/images/js/bootified.js" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/ofndtn/images/js/foundation.min.js" sequenceId="02"/>
+    
+    
+</entity-engine-xml>
+    
