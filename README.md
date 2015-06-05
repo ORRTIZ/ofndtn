@@ -2,7 +2,7 @@
 Apache OFBiz - Theme Integration Solution for the Foundation front-end framework.
 
 ### For the OFBiz backend
-This theme is intended for 'back-end' OFBiz applications. It is being developed and tested against Apache OFBiz&trade; - trunk and utilizes the [ZURB Foundation front-end framework](http://foundation.zurb.com).
+This theme is intended for 'back-end' OFBiz applications. It is being developed and tested against [Apache OFBiz&trade;](ofbiz.apache.org) - trunk and utilizes the [ZURB Foundation front-end framework](http://foundation.zurb.com).
 
 **Installation instructions**
 
