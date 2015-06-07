@@ -38,7 +38,7 @@ under the License.
 <forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-form.xsd">
     
-    <form name="ListThemeResources" type="multi" list-name="themeResources"
+    <form name="ListThemeResources" type="list" list-name="themeResources"
         odd-row-style="alternate-row" default-table-style="basic-table hover-bar">
         <field name="sequenceId" title=" " title-area-style="align-right" widget-area-style="align-right">
             <display/>
@@ -74,10 +74,10 @@ under the License.
                 </entity-options>
             </drop-down>
         </field>
-        <field name="sequenceId" title="${uiLabelMap.CommonSequenceNum}" required-field="true"><text/></field>
+        <field name="sequenceId" title="${uiLabelMap.CommonSequenceNum}" required-field="true"><text size="100"/></field>
         <field name="resourceValue" title="${uiLabelMap.CommonValue}" required-field="true"><text size="100"/></field>
         <field name="dummy99" title=" "><display/></field>
-        <field name="submitButton" title="${uiLabelMap.CommonSave}" widget-style="buttontext" >
+        <field name="submitButton" title="${uiLabelMap.CommonSave}" widget-style="smallSubmit" >
             <submit button-type="button"/>
         </field>
     </form>
