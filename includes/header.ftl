@@ -135,7 +135,7 @@ under the License.
     <div id="wait-spinner-image"></div>
   </div>
   <div class="container-fluid">
-  <div class="hidden">
+  <div class="hide">
     <a href="#column-container" title="${uiLabelMap.CommonSkipNavigation}" accesskey="2">
       ${uiLabelMap.CommonSkipNavigation}
     </a>
