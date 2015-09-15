@@ -32,11 +32,11 @@ under the License.
   <#elseif style == "button-bar button-style-2">
     <nav class="sub-top-bar hide-for-small" data-topbar role="navigation">
       <section>
-        <ul class="inline-list sub-nav" role="menu" title="">
+        <ul class="button-group" role="menu" title="">
   <#else>
     <nav class="sub-top-bar hide-for-small" data-topbar role="navigation">
       <section>
-        <ul class="inline-list sub-nav" role="menu" title="">
+        <ul class="button-group" role="menu" title="">
   </#if>
 	
 </#macro>
@@ -75,12 +75,12 @@ under the License.
 
 <#macro renderMenuItemBegin style toolTip linkStr containsNestedMenus>
 	<#if style == "buttontext create">
-		<li role="presentation" <#if toolTip?has_content> title="${toolTip}"</#if>><#if linkStr?has_content>${linkStr}</#if><#if containsNestedMenus><ul></#if><#rt/>
+		<li <#if toolTip?has_content> title="${toolTip}"</#if>><#if linkStr?has_content>${linkStr}</#if><#if containsNestedMenus><ul></#if><#rt/>
 		<script type="text/javascript">
-	      jQuery(".navbar-pills.pull-right li a.buttontext.create").each(function(){
+	      jQuery("a.buttontext.create").each(function(){
 	      	var linkText = jQuery(this).html();
 	      	var data = '<span class="glyphicon glyphicon-plus"></span> '+linkText;
-	      	jQuery(this).removeClass('buttontext').removeClass('create').addClass("btn btn-primary btn-xs");
+	      	jQuery(this).removeClass('buttontext').removeClass('create').addClass("button tiny success");
 	      	jQuery(this).html(data);
 	      	});
 	    </script>
