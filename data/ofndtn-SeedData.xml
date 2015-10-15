@@ -55,20 +55,6 @@
     <!-- css related -->
     <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/ofndtn/images/css/foundation.min.css" sequenceId="01"/>
     
-    <!-- ftl references -->
-    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_BS_TMPLT_LOC" resourceValue="component://ofndtn/includes/templates/htmlTemplate.ftl" sequenceId="01"/>
-    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_TMPLT_LOC" resourceValue="component://ofndtn/includes/header.ftl" sequenceId="01"/>
-    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_MSG_TMPLT_LOC" resourceValue="component://common/webcommon/includes/messages.ftl" sequenceId="01"/>
-    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_FTR_TMPLT_LOC" resourceValue="component://ofndtn/includes/footer.ftl" sequenceId="01"/>
-    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_NAV_TMPLT_LOC" resourceValue="component://ofndtn/includes/emptyAppBar.ftl" sequenceId="01"/>
-    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_NAV_APPHDR_LOC" resourceValue="component://ofndtn/includes/appbar.ftl" sequenceId="01"/>
-    
-    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_BS_MACRO_LIB" resourceValue="component://ofndtn/includes/templates/htmlTemplate.ftl" sequenceId="01"/>
-    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_SCRN_MACRO_LIB" resourceValue="component://ofndtn/includes/templates/htmlScreenMacroLibrary.ftl" sequenceId="01"/>
-    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_FORM_MACRO_LIB" resourceValue="component://ofndtn/includes/templates/htmlFormMacroLibrary.ftl" sequenceId="01"/>
-    <!--  <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_TREE_MACRO_LIB" resourceValue="component://ofndtn/includes/templates/htmlTreeMacroLibrary.ftl" sequenceId="01"/> -->
-    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_MENU_MACRO_LIB" resourceValue="component://ofndtn/includes/templates/htmlMenuMacroLibrary.ftl" sequenceId="01"/>
-    
     <!-- js related -->
     <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/jquery-1.11.0.min.js" sequenceId="01"/>
     <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/jquery-migrate-1.2.1.js" sequenceId="02"/>
@@ -100,6 +86,18 @@
     <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/ofndtn/images/js/bootified.js" sequenceId="01"/>
     <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/ofndtn/images/js/foundation.min.js" sequenceId="02"/>
     
+    <!-- ftl references -->
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_BS_MACRO_LIB" resourceValue="component://ofndtn/includes/templates/htmlTemplate.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_SCRN_MACRO_LIB" resourceValue="component://ofndtn/includes/templates/htmlScreenMacroLibrary.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_FORM_MACRO_LIB" resourceValue="component://ofndtn/includes/templates/htmlFormMacroLibrary.ftl" sequenceId="01"/>
+    <!--  <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_TREE_MACRO_LIB" resourceValue="component://ofndtn/includes/templates/htmlTreeMacroLibrary.ftl" sequenceId="01"/> -->
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_MENU_MACRO_LIB" resourceValue="component://ofndtn/includes/templates/htmlMenuMacroLibrary.ftl" sequenceId="01"/>
     
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_BS_TMPLT_LOC" resourceValue="component://ofndtn/includes/templates/htmlTemplate.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_TMPLT_LOC" resourceValue="component://ofndtn/includes/header.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_MSG_TMPLT_LOC" resourceValue="component://common/webcommon/includes/messages.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_FTR_TMPLT_LOC" resourceValue="component://ofndtn/includes/footer.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_NAV_TMPLT_LOC" resourceValue="component://ofndtn/includes/emptyAppBar.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_NAV_APPHDR_LOC" resourceValue="component://ofndtn/includes/appbar.ftl" sequenceId="01"/>
 </entity-engine-xml>
     

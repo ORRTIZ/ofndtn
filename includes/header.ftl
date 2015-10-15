@@ -67,8 +67,12 @@ under the License.
   <#assign show_last_menu = true>
 </#if>
 <html lang="${docLangAttr}" dir="${langDir}" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache, no store" />
+    <meta http-equiv="expires" content="-1" />
     <title>${layoutSettings.companyName}: <#if (page.titleProperty)?has_content>${uiLabelMap[page.titleProperty]}<#else>${(page.title)?if_exists}</#if></title>
     <#if layoutSettings.shortcutIcon?has_content>
       <#assign shortcutIcon = layoutSettings.shortcutIcon/>
@@ -115,7 +119,6 @@ under the License.
             ${extraHead}
         </#list>
     </#if>
-    <#if lastParameters?exists><#assign parametersURL = "&amp;" + lastParameters></#if>
     <#if layoutSettings.WEB_ANALYTICS?has_content>
       <script language="JavaScript" type="text/javascript">
         <#list layoutSettings.WEB_ANALYTICS as webAnalyticsConfig>
@@ -124,6 +127,7 @@ under the License.
       </script>
     </#if>
 </head>
+
 <#if layoutSettings.headerImageLinkUrl?exists>
   <#assign logoLinkURL = "${layoutSettings.headerImageLinkUrl}">
 <#else>
@@ -164,15 +168,15 @@ under the License.
               </#if>
               <#if userLogin.partyId?exists>
                 <li class="has-dropdown">
-                    <a href="#">${userName}</a>
+                    <a href="#">${userName!}</a>
                     <ul class="dropdown">
-                        <li><a href="<@ofbizUrl>passwordChange</@ofbizUrl>"<span class="glyphicon glyphicon-lock button-label">${uiLabelMap.CommonChangePassword}</a></li>
+                        <li><a href="<@ofbizUrl>passwordChange</@ofbizUrl>"><span class="glyphicon glyphicon-lock button-label">${uiLabelMap.CommonChangePassword}</a></li>
                         <li><a href="<@ofbizUrl>ListVisualThemes</@ofbizUrl>"><span class="glyphicon glyphicon-list button-label"></span> ${uiLabelMap.CommonVisualThemes}</a></li>
                         <li><a href="<@ofbizUrl>ListLocales</@ofbizUrl>"><span class="glyphicon glyphicon-globe button-label"></span> ${uiLabelMap.CommonLanguageTitle}</a></li>
                     </ul>
                 </li>
               <#else>
-                <li class="user">${userName}</li>
+                <li class="user">${userName!}</li>
               </#if>
               <#if layoutSettings.middleTopMessage1?has_content && layoutSettings.middleTopMessage1 != " ">
                 <li class="has-dropdown">
@@ -191,7 +195,7 @@ under the License.
           </ul>
     
         <ul class="left">
-            <li class="has-dropdown">
+            <li class="has-dropdown not-click">
               <#if userLogin?has_content>
                   <#-- Primary Applications -->
                     <a href="#">${uiLabelMap.CommonApplications}</a>
@@ -226,7 +230,7 @@ under the License.
                </ul>
             </li><#-- Primary Applications dropdown ends-->
                 
-            <li class="has-dropdown"><#-- Secondary Applications -->
+            <li class="has-dropdown not-click"><#-- Secondary Applications -->
                 <a href="#">${uiLabelMap.CommonMore}</a>
                 <ul class="dropdown">
                     <#list displaySecondaryApps as display>

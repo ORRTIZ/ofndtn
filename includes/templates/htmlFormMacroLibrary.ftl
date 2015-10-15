@@ -23,7 +23,8 @@ under the License.
   </#if>
 </#macro>
 
-<#macro renderDisplayField type imageLocation idName description title class alert inPlaceEditorUrl="" inPlaceEditorParams="">
+<#macro renderDisplayField type imageLocation idName description title class alert inPlaceEditorUrl="" inPlaceEditorParams="" title="">
+    <label>${title}
   <#if type?has_content && type=="image">
     <img src="${imageLocation}" alt=""><#lt/>
   <#else>
@@ -45,10 +46,12 @@ under the License.
       </script><#lt/>
     </#if>
   </#if>
+  </label>
 </#macro>
 <#macro renderHyperlinkField></#macro>
 
-<#macro renderTextField name className alert value textSize maxlength id event action disabled clientAutocomplete ajaxUrl ajaxEnabled mask tabindex  readonly placeholder="">
+<#macro renderTextField name className alert value textSize maxlength id event action disabled clientAutocomplete ajaxUrl ajaxEnabled mask tabindex  readonly placeholder="" title="">
+  <label>${title}
   <#if mask?has_content>
     <script type="text/javascript">
       jQuery(function($){jQuery("#${id}").mask("${mask}");});
@@ -71,6 +74,7 @@ under the License.
     <#assign defaultDelay = Static["org.ofbiz.base.util.UtilProperties"].getPropertyValue("widget.properties", "widget.autocompleter.defaultDelay")>
     <script language="JavaScript" type="text/javascript">ajaxAutoCompleter('${ajaxUrl}', false, ${defaultMinLength!2}, ${defaultDelay!300});</script><#lt/>
   </#if>
+  </label>
 </#macro>
 
 <#macro renderTextareaField name className alert cols rows maxlength id readonly value visualEditorEnable buttons tabindex language="">
@@ -403,7 +407,8 @@ under the License.
   </tr>
 </#macro>
 <#macro renderFormatItemRowCellOpen fieldName style positionSpan>
-  <td <#if positionSpan?has_content && positionSpan gt 1>colspan="${positionSpan}"</#if><#if style?has_content>class="${style}"</#if>>
+  <td <#if positionSpan?has_content && positionSpan gt 1>colspan="${positionSpan}"</#if><#if style?has_content>class="${style}"</#if>
+  >
 </#macro>
 <#macro renderFormatItemRowCellClose fieldName>
   </td>
@@ -416,30 +421,34 @@ under the License.
 </#macro>
 
 <#macro renderFormatSingleWrapperOpen formName style>
-  <table cellspacing="0" <#if style?has_content>class="${style}"</#if>>
+  <div class="row">
+    <div class="large-12<#if style?has_content> ${style}</#if> columns">
 </#macro>
 <#macro renderFormatSingleWrapperClose formName>
-  </table>
+    </div>
+  </div>
 </#macro>
 
 <#macro renderFormatFieldRowOpen>
-  <tr>
+  <div class="row">
+    <div class="large-12 columns">
 </#macro>
 <#macro renderFormatFieldRowClose>
-  </tr>
+    </div>
+  </div>
 </#macro>
+
 <#macro renderFormatFieldRowTitleCellOpen style>
-  <td class="<#if style?has_content>${style}<#else>label</#if>">
+  <div class="<#if style?has_content>${style}<#else>label</#if>">
 </#macro>
-<#macro renderFormatFieldRowTitleCellClose>
-  </td>
+<#macro renderFormatFieldRowWidgetCellOpen positionSpan style>
+  <#if positionSpan?has_content && positionSpan gt 0> colspan="${1+positionSpan*3}"</#if><#if style?has_content> class="${style}"</#if>
 </#macro>
 <#macro renderFormatFieldRowSpacerCell></#macro>
-<#macro renderFormatFieldRowWidgetCellOpen positionSpan style>
-  <td<#if positionSpan?has_content && positionSpan gt 0> colspan="${1+positionSpan*3}"</#if><#if style?has_content> class="${style}"</#if>>
+<#macro renderFormatFieldRowTitleCellClose>
 </#macro>
 <#macro renderFormatFieldRowWidgetCellClose>
-  </td>
+</div>s
 </#macro>
 
 <#--
@@ -447,13 +456,25 @@ under the License.
 <#macro renderFormatSingleWrapperOpen style> <div <#if style?has_content>class="${style}"</#if> ></#macro>
 <#macro renderFormatSingleWrapperClose> </div></#macro>
 
-<#macro renderFormatFieldRowOpen>  <div></#macro>
-<#macro renderFormatFieldRowClose>  </div></#macro>
-<#macro renderFormatFieldRowTitleCellOpen style>   <div class="<#if style?has_content>${style}<#else>label</#if>"></#macro>
-<#macro renderFormatFieldRowTitleCellClose></div></#macro>
+<#macro renderFormatFieldRowOpen>
+<div>
+</#macro>
+<#macro renderFormatFieldRowClose>
+  </div>
+</#macro>
+<#macro renderFormatFieldRowTitleCellOpen style>
+   <div class="<#if style?has_content>${style}<#else>label</#if>">
+</#macro>
+<#macro renderFormatFieldRowTitleCellClose>
+</div>
+</#macro>
 <#macro renderFormatFieldRowSpacerCell></#macro>
-<#macro renderFormatFieldRowWidgetCellOpen positionSpan style>   <div<#if positionSpan?has_content && positionSpan gt 0> colspan="${1+positionSpan*3}"</#if><#if style?has_content> class="${style}"</#if>></#macro>
-<#macro renderFormatFieldRowWidgetCellClose></div></#macro>
+<#macro renderFormatFieldRowWidgetCellOpen positionSpan style>
+    <div<#if positionSpan?has_content && positionSpan gt 0> colspan="${1+positionSpan*3}"</#if><#if style?has_content> class="${style}"</#if>>
+</#macro>
+<#macro renderFormatFieldRowWidgetCellClose>
+</div>
+</#macro>
 
 -->
 

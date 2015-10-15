@@ -152,6 +152,7 @@ under the License.
 </#macro>
 
 <#macro renderContentFrame fullUrl width height border><iframe src="${fullUrl}" width="${width}" height="${height}" <#if border?has_content>border="${border}"</#if> /></#macro>
+
 <#macro renderScreenletBegin id title collapsible saveCollapsed collapsibleAreaId expandToolTip collapseToolTip fullUrlString padded menuString showMore collapsed javaScriptEnabled>
 <div class="panel panel-default"<#if id?has_content> id="${id}"</#if>>
 <#-- <#if showMore> -->
@@ -159,7 +160,7 @@ under the License.
     <div class="panel-heading">
         <#if collapsible>
             <#assign btnId = "${id}-btn">
-            <div class="pull-left"><h3 class="panel-title">${title}</h3></div>
+            <div class="pull-left"><h3 class="panel-title">acacac ${title}</h3></div>
             <div class="pull-right">
                 <a id="${btnId}" class="btn btn-default btn-xs" data-toggle="collapse" href="#${collapsibleAreaId}" aria-expanded="true" aria-controls="${btnId}"><span class="glyphicon glyphicon-chevron-up"></span></a>
             </div>
@@ -181,7 +182,9 @@ ${menuString}
     <div <#if collapsibleAreaId?has_content> id="${collapsibleAreaId}" </#if> class="panel-body">
 </#if>
 </#macro>
+
 <#macro renderScreenletSubWidget></#macro>
+
 <#macro renderScreenletEnd></div></div></#macro>
 <#macro renderScreenletPaginateMenu lowIndex actualPageSize ofLabel listSize paginateLastStyle lastLinkUrl paginateLastLabel paginateNextStyle nextLinkUrl paginateNextLabel paginatePreviousStyle paginatePreviousLabel previousLinkUrl paginateFirstStyle paginateFirstLabel firstLinkUrl>
     <li class="${paginateLastStyle}<#if !lastLinkUrl?has_content> disabled</#if>"><#if lastLinkUrl?has_content><a href="${lastLinkUrl}">${paginateLastLabel}</a><#else>${paginateLastLabel}</#if></li>
