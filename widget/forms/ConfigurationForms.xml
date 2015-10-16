@@ -26,13 +26,13 @@
         <field name="systemPropertyId"><display/></field>
         <field name="systemPropertyValue"><display/></field>
         <field name="description"><display/></field>
-        <field name="editLink" widget-style="buttontext" title=" ">
+        <field name="editLink" widget-style="button tiny" title=" ">
            <hyperlink target="editsystemproperty" description="${uiLabelMap.CommonEdit}">
                 <parameter param-name="systemResourceId"/>
                 <parameter param-name="systemPropertyId"/>
             </hyperlink>
         </field>
-        <field name="deleteLink" widget-style="buttontext" title=" ">
+        <field name="deleteLink" widget-style="button tiny" title=" ">
            <hyperlink target="removesystemproperty" description="${uiLabelMap.CommonDelete}" request-confirmation="true">
                 <parameter param-name="systemResourceId"/>
                 <parameter param-name="systemPropertyId"/>
@@ -46,7 +46,7 @@
         <field name="systemPropertyValue" required-field="true"><text size="100"/></field>
         <field name="description" required-field="true"><textarea cols="60" rows="2"/></field>
         <field name="dummy99" title=" "><display/></field>
-        <field name="submitButton" title="${uiLabelMap.CommonSave}" widget-style="buttontext" >
+        <field name="submitButton" title="${uiLabelMap.CommonSave}" widget-style="button tiny" >
             <submit button-type="button"/>
         </field>
     </form>
@@ -57,7 +57,7 @@
         <field name="systemPropertyValue" required-field="true"><text size="100"/></field>
         <field name="description" title="${uiLabelMap.CommonDescription}" required-field="true"><textarea cols="60" rows="2"/></field>
         <field name="dummy99" title=" "><display/></field>
-        <field name="submitButton" title="${uiLabelMap.CommonUpdate}" widget-style="buttontext" >
+        <field name="submitButton" title="${uiLabelMap.CommonUpdate}" widget-style="button tiny" >
             <submit button-type="button" request-confirmation="true"/>
         </field>
     </form>
