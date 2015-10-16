@@ -48,14 +48,14 @@ under the License.
             <display-entity entity-name="Enumeration" key-field-name="enumId"/>
         </field>
         <field name="resourceValue" title="${uiLabelMap.CommonValue}"><display/></field>
-        <field name="editLink" widget-style="buttontext" title=" ">
+        <field name="editLink" widget-style="button tiny" title=" ">
            <hyperlink target="editthemeresource" description="${uiLabelMap.CommonEdit}">
                 <parameter param-name="visualThemeId"/>
                 <parameter param-name="resourceTypeEnumId"/>
                 <parameter param-name="sequenceId"/>
             </hyperlink>
         </field>
-        <field name="deleteLink" widget-style="buttontext" title=" ">
+        <field name="deleteLink" widget-style="button tiny" title=" ">
            <hyperlink target="removethemeresource" description="${uiLabelMap.CommonDelete}" request-confirmation="true">
                 <parameter param-name="visualThemeId"/>
                 <parameter param-name="resourceTypeEnumId"/>
