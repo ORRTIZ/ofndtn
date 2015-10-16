@@ -17,7 +17,7 @@
  * under the License.
  */
     /* This CSS file is used for all OFBiz applications EXCEPT ecommerce. */
-    /* See the "ecommain.css" file for ecommerce. */
+    /* See the "ecommain" file for ecommerce. */
     /* ===== Resets/Browser Normalization ===== */
 
 html, body, div, span, applet, object, iframe,
@@ -314,13 +314,6 @@ border: 0 solid #999999;
 padding: 0.4em;
 }
 
-.button {
-background-color: #dddddd;
-border: 0.2em outset #9999CC;
-padding-right: 0.5em;
-padding-left: 0.5em;
-}
-
 .browsecategorylist {
 margin-left: 10px;
 }
@@ -367,6 +360,8 @@ padding: 0.4em 0.6em 0.4em 0.6em;
 */
 A.buttontext {
 color: #000000;
+margin-left:  0.5em;
+padding: 0.4em 0.6em 0.4em 0.6em;
 }
 
 A.buttontext:hover {
