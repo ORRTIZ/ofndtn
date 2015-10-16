@@ -23,9 +23,9 @@ under the License.
 <#assign menuItemList = appModelMenu.menuItemList>
 <#if menuItemList?has_content>
     <div class="large-12 columns">
-    <nav class="sub-top-bar hide-for-small" data-topbar role="navigation">
+    <nav class="AppBar" data-topbar role="appbar">
         <section>
-        <ul class="inline-list sub-nav " role="menu" title="">
+        <ul class="button-group appbar" role="MainAppBar" title="">
             <#list menuItemList as item>
                 <#assign name = item.name>
                 <#assign title = item.getTitle(context)>
@@ -44,11 +44,12 @@ under the License.
                                         <#assign target = link>
                                 </#if>
                                 <li>
-                                    <a href="<@ofbizUrl>${target?if_exists}</@ofbizUrl>">${portalPage.get("portalPageName",locale)}</a>
+                                    <a href="<@ofbizUrl>${target?if_exists}</@ofbizUrl>" class="button">${portalPage.get("portalPageName",locale)}</a>
                                 </li>
                             </#list>
                         </#if>
                 </#if>
+                
                 <#-- Get TabBar submenu based on menu name -->
                 <#assign subMenuName = "${name}TabBar">
                 <#if menus?seq_contains("${subMenuName}")>
@@ -57,7 +58,7 @@ under the License.
                         <#assign subMenuItemList = subModelMenu.menuItemList>
                         <#if subMenuItemList?has_content>
                             <li class="has-dropdown">
-                                <a href="<@ofbizUrl>${target?if_exists}</@ofbizUrl>"</a>
+                                <a href="<@ofbizUrl>${target?if_exists}</@ofbizUrl>" class="button tiny tabbar"</a>
                                 <ul class="dropdown">
                                     <#list subMenuItemList as subMenuItem>
                                         <#assign name = subMenuItem.name>
@@ -75,7 +76,7 @@ under the License.
                         <#assign subMenuItemList = subModelMenu.menuItemList>
                         <#if subMenuItemList?has_content>
                             <li class="has-dropdown">
-                                <a href="<@ofbizUrl>${target}</@ofbizUrl>"</a>
+                                <a href="<@ofbizUrl>${target}</@ofbizUrl>" class="button tiny tabbar"</a>
                                 <ul class="dropdown">
                                     <#list subMenuItemList as subMenuItem>
                                         <#assign name = subMenuItem.name>
@@ -88,12 +89,12 @@ under the License.
                     </#if>
                 <#else>
                     <#if name == "main">
-                        <li class="menuTitle">
-                            <a href="<@ofbizUrl>${target?if_exists}</@ofbizUrl>">${applicationTitle}&nbsp;&nbsp;<span class="glyphicon glyphicon-home"></span>&nbsp;</a>
+                        <li>
+                            <a href="<@ofbizUrl>${target?if_exists}</@ofbizUrl>" class="button tiny">${applicationTitle}</a>
                         </li>
                         <#else>
                             <li>
-                            <a href="<@ofbizUrl>${target?if_exists}</@ofbizUrl>">${title?if_exists}</a>
+                            <a href="<@ofbizUrl>${target?if_exists}</@ofbizUrl>" class="button tiny">${title?if_exists}</a>
                             </li>
                     </#if>
                 </#if>
