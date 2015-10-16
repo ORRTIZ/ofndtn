@@ -17,7 +17,7 @@
  -->
 <menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-menu.xsd">
     
-    <menu name="ConfigurationTabBar" extends="CommonTabBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
+    <menu name="ConfigurationTabBar" extends="fndtnButtonBarSimpleTinyRadiusMenu" extends-resource="component://ofndtn/widget/CommonMenus.xml" >
         <menu-item name="systemProperties" title="${uiLabelMap.SystemProperties}">
             <condition>
                 <and>
@@ -40,8 +40,7 @@
         </menu-item>
     </menu>
     
-    <menu name="ConfigurationSubTabBar" extends="CommonTabBarMenu" extends-resource="component://common/widget/CommonMenus.xml"
-          menu-container-style="button-bar button-style-2 no-clear">
+    <menu name="ConfigurationSubTabBar" extends="fndtnLinkBarSimpleTinyRadiusMenu" extends-resource="component://ofndtn/widget/CommonMenus.xml" >
         <menu-item name="createSystemProperty" title="${uiLabelMap.NewSystemProperty}">
             <condition>
                 <or>
