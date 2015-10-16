@@ -70,6 +70,7 @@
     
     <!-- css related -->
     <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/ofndtn/images/css/foundation.min.css" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/ofndtn/images/css/legacy.css" sequenceId="02"/>
     
     <!-- js related -->
     <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/jquery-1.11.0.min.js" sequenceId="01"/>
@@ -99,7 +100,6 @@
     <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/orrtizbltheme/js/orrtiz.js" sequenceId="100"/>
     <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/orrtizbltheme/js/dropdown.js" sequenceId="101"/>
     
-    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/ofndtn/images/js/bootified.js" sequenceId="01"/>
     <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/ofndtn/images/js/foundation.min.js" sequenceId="02"/>
     
     <!-- ftl references -->
