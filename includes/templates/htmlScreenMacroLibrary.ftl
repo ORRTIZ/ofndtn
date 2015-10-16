@@ -160,7 +160,7 @@ under the License.
     <div class="panel-heading">
         <#if collapsible>
             <#assign btnId = "${id}-btn">
-            <div class="pull-left"><h3 class="panel-title">acacac ${title}</h3></div>
+            <div class="pull-left"><h3 class="panel-title">${title}</h3></div>
             <div class="pull-right">
                 <a id="${btnId}" class="btn btn-default btn-xs" data-toggle="collapse" href="#${collapsibleAreaId}" aria-expanded="true" aria-controls="${btnId}"><span class="glyphicon glyphicon-chevron-up"></span></a>
             </div>

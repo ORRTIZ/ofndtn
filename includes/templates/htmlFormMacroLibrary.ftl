@@ -23,8 +23,7 @@ under the License.
   </#if>
 </#macro>
 
-<#macro renderDisplayField type imageLocation idName description title class alert inPlaceEditorUrl="" inPlaceEditorParams="" title="">
-    <label>${title}
+<#macro renderDisplayField type imageLocation idName description title class alert inPlaceEditorUrl="" inPlaceEditorParams="">
   <#if type?has_content && type=="image">
     <img src="${imageLocation}" alt=""><#lt/>
   <#else>
@@ -46,12 +45,10 @@ under the License.
       </script><#lt/>
     </#if>
   </#if>
-  </label>
 </#macro>
 <#macro renderHyperlinkField></#macro>
 
-<#macro renderTextField name className alert value textSize maxlength id event action disabled clientAutocomplete ajaxUrl ajaxEnabled mask tabindex  readonly placeholder="" title="">
-  <label>${title}
+<#macro renderTextField name className alert value textSize maxlength id event action disabled clientAutocomplete ajaxUrl ajaxEnabled mask tabindex  readonly placeholder="">
   <#if mask?has_content>
     <script type="text/javascript">
       jQuery(function($){jQuery("#${id}").mask("${mask}");});
@@ -63,6 +60,7 @@ under the License.
     <#if textSize?has_content> size="${textSize}"</#if><#rt/>
     <#if maxlength?has_content> maxlength="${maxlength}"</#if><#rt/>
     <#if disabled?has_content && disabled> disabled="disabled"</#if><#rt/>
+    <#if readonly?has_content && readonly> readonly="readonly"</#if><#rt/>
     <#if id?has_content> id="${id}"</#if><#rt/>
     <#if event?has_content && action?has_content> ${event}="${action}"</#if><#rt/>
     <#if clientAutocomplete?has_content && clientAutocomplete=="false"> autocomplete="off"</#if><#rt/>
@@ -74,7 +72,6 @@ under the License.
     <#assign defaultDelay = Static["org.ofbiz.base.util.UtilProperties"].getPropertyValue("widget.properties", "widget.autocompleter.defaultDelay")>
     <script language="JavaScript" type="text/javascript">ajaxAutoCompleter('${ajaxUrl}', false, ${defaultMinLength!2}, ${defaultDelay!300});</script><#lt/>
   </#if>
-  </label>
 </#macro>
 
 <#macro renderTextareaField name className alert cols rows maxlength id readonly value visualEditorEnable buttons tabindex language="">
@@ -234,7 +231,7 @@ under the License.
   <span class="ui-widget">
     <select name="${name?default("")}<#rt/>" <@renderClass className alert /><#if id?has_content> id="${id}"</#if><#if multiple?has_content> multiple="multiple"</#if><#if otherFieldSize gt 0> onchange="process_choice(this,document.${formName}.${otherFieldName})"</#if><#if event?has_content> ${event}="${action}"</#if><#if size?has_content> size="${size}"</#if><#if tabindex?has_content> tabindex="${tabindex}"</#if><#rt/>>
       <#if firstInList?has_content && currentValue?has_content && !multiple?has_content>
-        <option selected="selected" value="${currentValue}">${explicitDescription}</option><#rt/>
+        <option selected="selected" value="${currentValue}">${explicitDescription?replace("&#x5c;&#x27;","&#x27;")}</option><#rt/><#-- replace("&#x5c;&#x27;","&#x27;") related to OFBIZ-6504 -->
         <option value="${currentValue}">---</option><#rt/>
       </#if>
       <#if allowEmpty?has_content || !options?has_content>
@@ -242,9 +239,9 @@ under the License.
       </#if>
       <#list options as item>
         <#if multiple?has_content>
-          <option<#if currentValue?has_content && item.selected?has_content> selected="${item.selected}" <#elseif !currentValue?has_content && noCurrentSelectedKey?has_content && noCurrentSelectedKey == item.key> selected="selected" </#if> value="${item.key}">${item.description}</option><#rt/>
+          <option<#if currentValue?has_content && item.selected?has_content> selected="${item.selected}" <#elseif !currentValue?has_content && noCurrentSelectedKey?has_content && noCurrentSelectedKey == item.key> selected="selected" </#if> value="${item.key}">${item.description?replace("&#x5c;&#x27;","&#x27;")}</option><#rt/> <#-- replace("&#x5c;&#x27;","&#x27;") related to OFBIZ-6504 -->
         <#else>
-          <option<#if currentValue?has_content && currentValue == item.key && dDFCurrent?has_content && "selected" == dDFCurrent> selected="selected"<#elseif !currentValue?has_content && noCurrentSelectedKey?has_content && noCurrentSelectedKey == item.key> selected="selected"</#if> value="${item.key}">${item.description}</option><#rt/>
+          <option<#if currentValue?has_content && currentValue == item.key && dDFCurrent?has_content && "selected" == dDFCurrent> selected="selected"<#elseif !currentValue?has_content && noCurrentSelectedKey?has_content && noCurrentSelectedKey == item.key> selected="selected"</#if> value="${item.key}">${item.description?replace("&#x5c;&#x27;","&#x27;")}</option><#rt/> <#-- replace("&#x5c;&#x27;","&#x27;") related to OFBIZ-6504 -->
         </#if>
       </#list>
     </select>
@@ -407,8 +404,7 @@ under the License.
   </tr>
 </#macro>
 <#macro renderFormatItemRowCellOpen fieldName style positionSpan>
-  <td <#if positionSpan?has_content && positionSpan gt 1>colspan="${positionSpan}"</#if><#if style?has_content>class="${style}"</#if>
-  >
+  <td <#if positionSpan?has_content && positionSpan gt 1>colspan="${positionSpan}"</#if><#if style?has_content>class="${style}"</#if>>
 </#macro>
 <#macro renderFormatItemRowCellClose fieldName>
   </td>
@@ -421,34 +417,30 @@ under the License.
 </#macro>
 
 <#macro renderFormatSingleWrapperOpen formName style>
-  <div class="row">
-    <div class="large-12<#if style?has_content> ${style}</#if> columns">
+  <table cellspacing="0" <#if style?has_content>class="${style}"</#if>>
 </#macro>
 <#macro renderFormatSingleWrapperClose formName>
-    </div>
-  </div>
+  </table>
 </#macro>
 
 <#macro renderFormatFieldRowOpen>
-  <div class="row">
-    <div class="large-12 columns">
+  <tr>
 </#macro>
 <#macro renderFormatFieldRowClose>
-    </div>
-  </div>
+  </tr>
 </#macro>
-
 <#macro renderFormatFieldRowTitleCellOpen style>
-  <div class="<#if style?has_content>${style}<#else>label</#if>">
+  <td class="<#if style?has_content>${style}<#else>label</#if>">
 </#macro>
-<#macro renderFormatFieldRowWidgetCellOpen positionSpan style>
-  <#if positionSpan?has_content && positionSpan gt 0> colspan="${1+positionSpan*3}"</#if><#if style?has_content> class="${style}"</#if>
+<#macro renderFormatFieldRowTitleCellClose>
+  </td>
 </#macro>
 <#macro renderFormatFieldRowSpacerCell></#macro>
-<#macro renderFormatFieldRowTitleCellClose>
+<#macro renderFormatFieldRowWidgetCellOpen positionSpan style>
+  <td<#if positionSpan?has_content && positionSpan gt 0> colspan="${1+positionSpan*3}"</#if><#if style?has_content> class="${style}"</#if>>
 </#macro>
 <#macro renderFormatFieldRowWidgetCellClose>
-</div>s
+  </td>
 </#macro>
 
 <#--
@@ -456,25 +448,13 @@ under the License.
 <#macro renderFormatSingleWrapperOpen style> <div <#if style?has_content>class="${style}"</#if> ></#macro>
 <#macro renderFormatSingleWrapperClose> </div></#macro>
 
-<#macro renderFormatFieldRowOpen>
-<div>
-</#macro>
-<#macro renderFormatFieldRowClose>
-  </div>
-</#macro>
-<#macro renderFormatFieldRowTitleCellOpen style>
-   <div class="<#if style?has_content>${style}<#else>label</#if>">
-</#macro>
-<#macro renderFormatFieldRowTitleCellClose>
-</div>
-</#macro>
+<#macro renderFormatFieldRowOpen>  <div></#macro>
+<#macro renderFormatFieldRowClose>  </div></#macro>
+<#macro renderFormatFieldRowTitleCellOpen style>   <div class="<#if style?has_content>${style}<#else>label</#if>"></#macro>
+<#macro renderFormatFieldRowTitleCellClose></div></#macro>
 <#macro renderFormatFieldRowSpacerCell></#macro>
-<#macro renderFormatFieldRowWidgetCellOpen positionSpan style>
-    <div<#if positionSpan?has_content && positionSpan gt 0> colspan="${1+positionSpan*3}"</#if><#if style?has_content> class="${style}"</#if>>
-</#macro>
-<#macro renderFormatFieldRowWidgetCellClose>
-</div>
-</#macro>
+<#macro renderFormatFieldRowWidgetCellOpen positionSpan style>   <div<#if positionSpan?has_content && positionSpan gt 0> colspan="${1+positionSpan*3}"</#if><#if style?has_content> class="${style}"</#if>></#macro>
+<#macro renderFormatFieldRowWidgetCellClose></div></#macro>
 
 -->
 
@@ -869,12 +849,12 @@ Parameter: tabindex, String, optional - HTML tabindex number.
     <#if confirmation?has_content> onclick="return confirm('${confirmation?js_string}')"</#if>>
       <#if imgSrc?has_content><img src="${imgSrc}" alt=""/></#if>${description}</a>
 </#macro>
-<#macro makeHyperlinkString linkStyle hiddenFormName event action imgSrc title alternate linkUrl targetWindow description confirmation id>
+<#macro makeHyperlinkString linkStyle hiddenFormName event action imgSrc title alternate linkUrl targetWindow description confirmation id="">
     <a <#if linkStyle?has_content>class="${linkStyle}"</#if> 
       href="${linkUrl}"<#if targetWindow?has_content> target="${targetWindow}"</#if>
       <#if action?has_content && event?has_content> ${event}="${action}"</#if>
       <#if confirmation?has_content> onclick="return confirm('${confirmation?js_string}')"</#if>
-      <#if imgSrc?length == 0 && title?has_content> title="${title}"</#if>
       <#if id?has_content> id="${id}"</#if>
-      <#if imgSrc?has_content><img src="${imgSrc}" alt="${alternate}" title="${title}"/></#if>${description}</a>
+      <#if imgSrc?length == 0 && title?has_content> title="${title}"</#if>>
+        <#if imgSrc?has_content><img src="${imgSrc}" alt="${alternate}" title="${title}"/></#if>${description}</a>
   </#macro>
