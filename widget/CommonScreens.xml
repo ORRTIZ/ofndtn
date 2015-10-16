@@ -128,7 +128,6 @@
                         <set field="messagesTemplateLocation" from-field="layoutSettings.VT_MSG_TMPLT_LOC[0]" />
                         <set field="layoutSettings.suppressTab" value="ofbizsetup"/><!-- disable ofbiz setup by default -->
                         
-                        <script location="component://common/webcommon/WEB-INF/actions/includes/AppRedirect.groovy"/>
                     </actions>
                     <widgets />
                 </section>
