@@ -57,6 +57,6 @@
         location="webapp/ofndtn"
         base-permission="OFBTOOLS,ofndtn"
         mount-point="/ofndtn"
-        menu-name="Themes"
+        menu-name="secondary"
         />
 </ofbiz-component>
