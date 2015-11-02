@@ -372,6 +372,13 @@ under the License.
   <table cellspacing="0" class="<#if style?has_content>${style}<#else>basic-table form-widget-table dark-grid</#if>"><#lt/>
 </#macro>
 
+<#macro renderFormatHeaderOpen>
+  <thead>
+</#macro>
+<#macro renderFormatHeaderClose>
+  </thead>
+</#macro>
+
 <#macro renderFormatListWrapperClose formName>
   </table><#lt/>
 </#macro>
