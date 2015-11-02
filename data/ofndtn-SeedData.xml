@@ -63,7 +63,7 @@
 
     <VisualTheme visualThemeId="ofndtn" visualThemeSetId="BACKOFFICE" description="O Foundation Basic Theme - Floating Layout, Sight-Impaired Accessible, Bidirectional"/>
     
-    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_NAME" resourceValue="O Bootstrap Theme" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_NAME" resourceValue="O Foundation Theme" sequenceId="01"/>
     <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_SHORTCUT_ICON" resourceValue="/ofndtn/images/img/ofbiz.ico" sequenceId="01"/>
     <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_HDR_IMAGE_URL" resourceValue="/ofndtn/images/img/ofbiz-logo.gif" sequenceId="01"/>
     <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_SCREENSHOT" resourceValue="/ofndtn/images/screenshot.jpg" sequenceId="01"/>
