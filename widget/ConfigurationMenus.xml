@@ -41,7 +41,7 @@
     </menu>
     
     <menu name="ConfigurationSubTabBar" extends="fndtnLinkBarSimpleTinyRadiusMenu" extends-resource="component://ofndtn/widget/CommonMenus.xml" >
-        <menu-item name="createSystemProperty" title="${uiLabelMap.NewSystemProperty}">
+        <menu-item name="NewSystemProperty" title="${uiLabelMap.NewSystemProperty}">
             <condition>
                 <or>
                     <if-has-permission permission="${activeApp}" action="_ADMIN"/>
