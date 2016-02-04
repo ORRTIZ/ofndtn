@@ -19,7 +19,7 @@
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/services.xsd">
     
     <description>Services of ofndtn</description>
-    <vendor></vendor>
+    <vendor>Somonar B.V.</vendor>
     <version>1.0</version>
 
     <service name="noSyntaxError" engine="interface">
