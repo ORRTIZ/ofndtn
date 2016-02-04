@@ -60,8 +60,8 @@
     <Enumeration enumId="VT_FRM_HDR_SS_LOC" description="Form Header Style Sheet File URL" enumTypeId="VT_RES_TYPE" sequenceId="32"/>
     
     <Enumeration enumId="VT_NAV_APPHDR_LOC" enumTypeId="VT_RES_TYPE" sequenceId="30" description="Location of Application header."/>
-
-    <VisualTheme visualThemeId="ofndtn" visualThemeSetId="BACKOFFICE" description="O Foundation Basic Theme - Floating Layout, Sight-Impaired Accessible, Bidirectional"/>
+    
+    <VisualTheme visualThemeId="ofndtn" visualThemeSetId="BACKOFFICE" description="O Foundation Theme - Floating Layout, Sight-Impaired Accessible, Bidirectional"/>
     
     <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_NAME" resourceValue="O Foundation Theme" sequenceId="01"/>
     <VisualThemeResource visualThemeId="ofndtn" resourceTypeEnumId="VT_SHORTCUT_ICON" resourceValue="/ofndtn/images/img/ofbiz.ico" sequenceId="01"/>
