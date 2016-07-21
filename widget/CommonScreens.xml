@@ -23,9 +23,10 @@
             <actions>
                 <set field="activeApp" value="ofndtn" global="true"/>
                 
+                <property-map resource="${activeApp}-Styles" map-name="${activeApp}Styles" global="true"/>
                 <property-map resource="${activeApp}-UiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
-
+                
                 <set field="layoutSettings.companyName" from-field="uiLabelMap.${activeApp}CompanyName" global="true"/>
                 <set field="layoutSettings.companySubtitle" from-field="uiLabelMap.${activeApp}CompanySubtitle" global="true"/>
                 
@@ -37,7 +38,7 @@
                 <set field="applicationTitle" value="${uiLabelMap.${activeApp}Application}" global="true"/>
             </actions>
             <widgets>
-                <include-screen name="GlobalDecorator"/>
+                <include-screen name="GlobalDecorator" location="component://common/widget/CommonScreens.xml"/>
             </widgets>
         </section>
     </screen>
@@ -110,11 +111,35 @@
         </section>
     </screen>
     
+    <!-- Global screen rendering context initialization, intended to be included in screen decorators. Devs - please keep this simple and generic. -->
+    <screen name="GlobalActions">
+        <section>
+            <actions>
+                <set field="visualThemeId" from-field="userPreferences.VISUAL_THEME" global="true" />
+                <set field="theme" value="${visualThemeId}" global="true" />
+                <property-map resource="${theme}-Styles" map-name="${theme}Styles" global="true"/>
+                <service service-name="getVisualThemeResources">
+                    <field-map field-name="visualThemeId" />
+                    <field-map field-name="themeResources" from-field="layoutSettings" />
+                </service>
+                <set field="layoutSettings" from-field="themeResources" default-value="${layoutSettings}" global="true" />
+                
+                <set field="initialLocaleComplete" type="String" value="${groovy:parameters?.userLogin?.lastLocale}" default-value="${groovy:locale.toString()}" />
+                <set field="layoutSettings.javaScripts[+0]" value="${groovy: org.ofbiz.common.JsLanguageFilesMapping.datejs.getFilePath(initialLocaleComplete)}" global="true" />
+                <set field="layoutSettings.javaScripts[+0]" value="${groovy: org.ofbiz.common.JsLanguageFilesMapping.jquery.getFilePath(initialLocaleComplete)}" global="true" />
+                <set field="layoutSettings.javaScripts[+0]" value="${groovy: org.ofbiz.common.JsLanguageFilesMapping.validation.getFilePath(initialLocaleComplete)}" global="true" />
+                <set field="layoutSettings.javaScripts[+0]" value="${groovy: org.ofbiz.common.JsLanguageFilesMapping.dateTime.getFilePath(initialLocaleComplete)}" global="true" />
+                
+            </actions>
+            <widgets />
+        </section>
+    </screen>
+    
     <!-- Global decorator for General Screens/Pages -->
     <screen name="GlobalDecorator">
         <section>
             <widgets>
-                <include-screen name="GlobalActions" location="component://common/widget/CommonScreens.xml"/>
+                <include-screen name="GlobalActions" location="${parameters.GlobalDecoratorLocation}"/>
                 <section>
                     <actions>
                         <set field="layoutSettings.commonHeaderImageLinkUrl" from-field="layoutSettings.commonHeaderImageLinkUrl" default-value="main" global="true" />
@@ -128,6 +153,9 @@
                         <set field="messagesTemplateLocation" from-field="layoutSettings.VT_MSG_TMPLT_LOC[0]" />
                         <set field="layoutSettings.suppressTab" value="ofbizsetup"/><!-- disable ofbiz setup by default -->
                         
+                        <!-- this should go somewhere else 
+                        <script location="component://common/webcommon/WEB-INF/actions/includes/AppRedirect.groovy"/>
+                        -->
                     </actions>
                     <widgets />
                 </section>
