@@ -20,6 +20,10 @@
     
     <screen name="ThemeResources">
         <section>
+            <actions>
+                
+                <property-map resource="ofndtn-Styles" map-name="styles" global="true"/>
+            </actions>
             <widgets>
                 <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
@@ -31,7 +35,7 @@
                                 </entity-condition>
                             </actions>
                             <widgets>
-                                <screenlet title=" ">
+                                <screenlet title="${${theme}Styles.button}">
                                     <include-form location="component://${activeApp}/widget/forms/ThemeForms.xml" name="ListThemeResources"/>
                                 </screenlet>
                             </widgets>
